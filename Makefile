@@ -9,7 +9,7 @@ GH_PAGES_SOURCES =.vscode src test .travis Makefile LICENSE README.md requiremen
 
 gh-pages:
     git checkout gh-pages
-    rm -rf build _sources _static
+    rm -rf build _sources _static $(GH_PAGES_SOURCES)
     git checkout master 
     git reset HEAD
     cd docs 
