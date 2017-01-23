@@ -14,7 +14,7 @@ gh-pages:
     git reset HEAD
     cd docs 
     make html
-    mv -fv _build/html/* ./**/*.*
+    mv -fv _build/html/**/*.* ./**/*.*
     rm -rf $(GH_PAGES_SOURCES) _build
     git add -A
     git commit -m "Generated gh-pages for `git log master -1 --pretty=short --abbrev-commit`" 
