@@ -14,4 +14,4 @@ gh-pages:
     git reset HEAD
     cd docs 
     make html
-    mv -R -f _build/html/* ./
+    mv -f _build/html/* ./
