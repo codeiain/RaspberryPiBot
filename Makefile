@@ -14,4 +14,4 @@ gh-pages:
     git reset HEAD
     cd docs 
     make html
-    rsync -av docs/_build/html/* ./
+    mv -av _build/html/* ./
