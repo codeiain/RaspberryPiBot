@@ -4,13 +4,13 @@ init:
 test:
 	nosetests tests
 
-GH_PAGES_SOURCES = source code libuv Makefile
+GH_PAGES_SOURCES =.vscode src test .travis Makefile LICENSE README.md requirements.txt setup.py
 
 
 gh-pages:
     git checkout gh-pages
     rm -rf build _sources _static
-    git checkout master $(GH_PAGES_SOURCES)
+    git checkout master 
     git reset HEAD
     cd docs make html
     mv -fv _build/html/* ./
