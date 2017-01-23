@@ -17,6 +17,6 @@ gh-pages:
     rsync -av _build/html/* ./
     rm -rf $(GH_PAGES_SOURCES) _build
     git add -A
-    git commit -m "Generated gh-pages for `git log master -1 --pretty=short --abbrev-commit`" 
-    git push origin gh-pages
+    git commit -m "Generated gh-pages" 
+    git push
     git checkout master
