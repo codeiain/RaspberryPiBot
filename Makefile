@@ -15,3 +15,8 @@ gh-pages:
     cd docs 
     make html
     mv _build/html/* ././
+    rm -rf $(GH_PAGES_SOURCES) _build docs
+    git add -A
+    git commit -m "Generated gh-pages " 
+    git push origin gh-pages
+    git checkout master
