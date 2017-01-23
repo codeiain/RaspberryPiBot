@@ -16,7 +16,7 @@ gh-pages:
     make html
     mv _build/html/* ././
     rm -rf $(GH_PAGES_SOURCES) _build docs
-    git add -A
+    git add .
     git commit -m "Generated gh-pages " 
-    git push origin gh-pages
+    git push
     git checkout master
