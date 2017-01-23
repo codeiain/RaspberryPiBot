@@ -2,3 +2,5 @@ language:python
 python:
 	- "2.7"
 script: make test
+notifications:
+	slack: codeiain:L4zHgsi0hcrNA3s0r8WeuOWG
