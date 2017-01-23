@@ -18,5 +18,5 @@ gh-pages:
     rm -rf $(GH_PAGES_SOURCES) _build docs
     git add .
     git commit -m "Generated gh-pages " 
-    git push
+    git push origin gh-pages
     git checkout master
