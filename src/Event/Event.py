@@ -5,7 +5,7 @@ class Event:
         self.handlers = set()
 
     def handle(self, handler):
-        self.handler.add(handler)
+        self.handlers.add(handler)
         return self
 
     def unhandle(self, handler):
