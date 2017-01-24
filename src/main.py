@@ -1,4 +1,5 @@
 import RPi.GPIO as GPIO
+from sensors import ultrasonic
 
 class MoterManager:
     def __init__(self, in1Pin, in2Pin):
