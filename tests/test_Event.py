@@ -4,14 +4,18 @@ import sys
 sys.path.append('..\src')
 from Event import Event
 
+test = None
+
 class TestEvent(unittest.TestCase):
     def test_init(self):
+        global test
+        test = self
         watcher = MockFileWatcher()
         watcher.fileChanged += log_file_change
         watcher.watchFiles()
 
+
 def log_file_change(source_path):
-    test = unittest.TestCase
     test.assertEquals(source_path, "foo")
 
 def log_file_change2(source_path):
