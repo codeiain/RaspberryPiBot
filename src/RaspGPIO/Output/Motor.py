@@ -34,15 +34,28 @@ class Motor:
             return "Error writing to: " + property + " value: "+ValueError
 
     def clockwise(self):
+        """
+        runs the motor clockwise
+        :return:
+        """
         GPIO.output(self._pin1, True)    
         GPIO.output(self._pin2, False)
 
     def counter_clockwise(self):
+        """
+        runs the motor counter clockwise
+        :return:
+        """
         GPIO.output( self._pin1, False)    
         GPIO.output(self._pin2, True)
     
     def set_speed(self, value):
-        if (value <0 and value> 9):
+        """
+        sets the motors speed
+        :param value:
+        :return:
+        """
+        if value < 0 and value > 9:
             return "speed must be between 0 and 9"
         else:
             speed = int (value) * 11

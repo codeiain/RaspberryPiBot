@@ -18,10 +18,7 @@
 #
 import os
 import sys
-sys.path.insert(0,"C:\\Dev\\RaspberryPiBot\\src")
-print "-----"
-print sys.path[0]
-print "-----"
+sys.path.insert(0, "/Users/iain/Dev/RaspberryPiBot/src")
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.

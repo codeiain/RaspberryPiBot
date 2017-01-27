@@ -29,27 +29,27 @@ Modules
     :undoc-members:
     :show-inheritance:
 
-.. automodule:: NeuralNetwork
+.. automodule:: NN
     :members:
     :undoc-members:
     :show-inheritance:
 
-.. automodule:: NeuralNetwork.Connection
+.. automodule:: NN.Connection
     :members:
     :undoc-members:
     :show-inheritance:
 
-.. automodule:: NeuralNetwork.Layer
+.. automodule:: NN.Layer
     :members:
     :undoc-members:
     :show-inheritance:
 
-.. automodule:: NeuralNetwork.Neuron
+.. automodule:: NN.Neuron
     :members:
     :undoc-members:
     :show-inheritance:
 
-.. automodule:: NeuralNetwork.NeuralNetwork
+.. automodule:: NN.NeuralNetwork
     :members:
     :undoc-members:
     :show-inheritance:
