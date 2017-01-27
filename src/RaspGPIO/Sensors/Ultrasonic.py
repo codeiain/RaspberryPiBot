@@ -1,7 +1,16 @@
-import RPi.GPIO as GPIO
+import imp
+try:
+    imp.find_module('RPi.GPIO')
+    found = True
+    import RPi.GPIO as GPIO
+except ImportError:
+    found = False
+    print 'not found'
+    import _RPi.GPIO as GPIO
+
 import threading
 import time
-from Event import Event
+from RaspGPIO.Event import Event
 
 # https://www.modmypi.com/blog/hc-sr04-ultrasonic-range-sensor-on-the-raspberry-pi
 # Modified from the above example
@@ -18,11 +27,14 @@ class Ultrasonic:
         self.gotData = Event()
         thread = threading.Thread(target=self.watchforData, args=())
         thread.daemon = False                           
-        thread.start()                                  # Start the execution
+        thread.start()                                  
 
     @classmethod
     def watchforData(self):
-        """ Method that runs forever and watches for data from the Ultrasonic sensor """
+        """ 
+        Method that runs forever and watches for data from the Ultrasonic sensor 
+        Ultrasonic.gotData += function(distance) to catch the event
+        """
         while True:
             GPIO.output(self.__trig, True)
             time.sleep(0.00001)

@@ -2,7 +2,7 @@ import unittest
 
 import sys
 sys.path.append('..\src')
-from Event import Event
+from RaspGPIO.Event import Event
 
 test = None
 
@@ -13,7 +13,6 @@ class TestEvent(unittest.TestCase):
         watcher = MockFileWatcher()
         watcher.fileChanged += log_file_change
         watcher.watchFiles()
-
 
 def log_file_change(source_path):
     test.assertEquals(source_path, "foo")

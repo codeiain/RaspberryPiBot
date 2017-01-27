@@ -1,5 +1,14 @@
-import RPi.GPIO as GPIO
-from sensors import ultrasonic
+import imp
+try:
+    imp.find_module('RPi.GPIO')
+    found = True
+    import RPi.GPIO as GPIO
+except ImportError:
+    found = False
+    print 'not found'
+    import _RPi.GPIO as GPIO
+
+from RaspGPIO.Sensors import Ultrasonic
 
 class MoterManager:
     def __init__(self, in1Pin, in2Pin):

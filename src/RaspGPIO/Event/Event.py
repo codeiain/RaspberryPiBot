@@ -1,6 +1,7 @@
-#http://www.valuedlessons.com/2008/04/events-in-python.html
+
 
 class Event:
+
     def __init__(self):
         self.handlers = set()
 
