@@ -15,10 +15,16 @@ from RaspGPIO.Event import Event
 # https://www.modmypi.com/blog/hc-sr04-ultrasonic-range-sensor-on-the-raspberry-pi
 # Modified from the above example
 
+
 class Ultrasonic:
 
-    @classmethod
     def __init__(self, TRIG, ECHO, Mode):
+        """
+            Class the HC-SR04 Ultrasonic Range Sensor, using a seprate thread to monitor for data changes and fire events.
+            TRIG = pin\n
+            ECHO = pin\n
+            Mode = GPIO.BOARD or GPIO.BCM
+        """
         self.__trig = TRIG
         self.__echo = ECHO
         GPIO.setmode(Mode)

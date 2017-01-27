@@ -1,7 +1,8 @@
 
-
 class Event:
-
+    """
+        poop
+    """
     def __init__(self):
         self.handlers = set()
 
