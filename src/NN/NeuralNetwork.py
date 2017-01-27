@@ -13,7 +13,7 @@ class NeuralNetwork:
         self.retrain_chances=0
 
     def add_layer(self, num_connections, num_neurons):
-        self.layers.add(Layer(num_connections, num_neurons))
+        self.layers.append(Layer(num_connections, num_neurons))
 
     def get_layer_count(self):
         return len(self.layers)
@@ -39,7 +39,7 @@ class NeuralNetwork:
     def process_inputs_to_outputs(self, temp_inputs):
         self.set_inputs(temp_inputs)
         if self.get_layer_count > 0:
-            if len(self.array_of_inputs) != self.layers[0].neurons[0].get_connected_count()
+            if len(self.array_of_inputs) != self.layers[0].neurons[0].get_connected_count():
                 print "NN Error: processInputsToOutputs: The number of inputs do NOT match the NN"
                 exit()
             else:
