@@ -24,6 +24,9 @@ Modules
     :undoc-members:
     :show-inheritance:
 
-
+.. automodule:: RaspGPIO.Output.Motor
+    :members:
+    :undoc-members:
+    :show-inheritance:
 
 
