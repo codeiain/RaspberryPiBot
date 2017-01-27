@@ -29,4 +29,28 @@ Modules
     :undoc-members:
     :show-inheritance:
 
+.. automodule:: NeuralNetwork
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+.. automodule:: NeuralNetwork.Connection
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+.. automodule:: NeuralNetwork.Layer
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+.. automodule:: NeuralNetwork.Neuron
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+.. automodule:: NeuralNetwork.NeuralNetwork
+    :members:
+    :undoc-members:
+    :show-inheritance:
 
