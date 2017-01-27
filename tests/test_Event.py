@@ -8,7 +8,6 @@ from RaspGPIO.Event import Event
 test = None
 
 class TestEvent(unittest.TestCase):
-
     def test_init(self):
         global test
         test = self
