@@ -11,7 +11,7 @@ class Layer:
         self.learning_rate = 0
         self.layer_error = 0
         for i in range(0, number_neurons):
-            temp_neuron = Neuron(number_connections)
+            temp_neuron = Neuron.Neuron(number_connections)
             self.add_neuron(temp_neuron)
             self.add_actual_output()
 
@@ -19,7 +19,7 @@ class Layer:
         self.neurons.append(xneuron)
 
     def get_neuron_count(self):
-        return list.count(self.neurons)
+        return len(self.neurons)
 
     def add_actual_output(self):
         self.actual_output.append(None)
@@ -63,16 +63,16 @@ class Layer:
         neuron_count = self.get_neuron_count()
         self.set_layer_error(0)
         for i in range(0, neuron_count):
-            self.neurons[i].delta_error = self.actual_output[i]*(1-self.actual_output(i))*(self.expected_outputs[i] - self.actual_output[i])
+            self.neurons[i].delta_error = self.actual_output[i] * (1-self.actual_output[i]) * (self.expected_outputs[i] - self.actual_output[i])
             self.increase_layer_error_by(abs(self.expected_outputs[i] - self.actual_output[i]))
 
     def train_layer(self, temp_learning_rate):
         self.set_learing_rate(temp_learning_rate)
         neuron_count = self.get_neuron_count()
         for i in range(0, neuron_count):
-            self.neurons[i].bias += (self.learning_rate * 1 * self.neurons[i].deltaError)
-            for j in range(0, self.neurons[j].get_connection_count):
-                self.neurons[i].connections[j].weight += (self.learning_rate * self.neurons[i].connectiions[j].conn_entry * self.neurons[i].delta_error)
+            self.neurons[i].bias += (self.learning_rate * 1 * self.neurons[i].delta_error)
+            for j in range(0, self.neurons[i].get_connection_count()):
+                self.neurons[i].connections[j].weight += (self.learning_rate * self.neurons[i].connections[j].conn_entry * self.neurons[i].delta_error)
 
 
 

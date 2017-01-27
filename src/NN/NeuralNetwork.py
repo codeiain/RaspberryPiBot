@@ -13,7 +13,7 @@ class NeuralNetwork:
         self.retrain_chances=0
 
     def add_layer(self, num_connections, num_neurons):
-        self.layers.append(Layer(num_connections, num_neurons))
+        self.layers.append(Layer.Layer(num_connections, num_neurons))
 
     def get_layer_count(self):
         return len(self.layers)
@@ -39,7 +39,7 @@ class NeuralNetwork:
     def process_inputs_to_outputs(self, temp_inputs):
         self.set_inputs(temp_inputs)
         if self.get_layer_count > 0:
-            if len(self.array_of_inputs) != self.layers[0].neurons[0].get_connected_count():
+            if len(self.array_of_inputs) != self.layers[0].neurons[0].get_connection_count():
                 print "NN Error: processInputsToOutputs: The number of inputs do NOT match the NN"
                 exit()
             else:
@@ -47,11 +47,11 @@ class NeuralNetwork:
                     if i ==0:
                         self.set_layer_inputs(self.array_of_inputs,i)
                     else:
-                        self.set_layer_inputs(self.layers[i-1].actual_outputs, i)
+                        self.set_layer_inputs(self.layers[i-1].actual_output, i)
 
                     self.layers[i].process_inputs_to_outputs()
 
-                self.set_outputs(self.layers[self.get_layer_count()-1].actual_outputs)
+                self.set_outputs(self.layers[self.get_layer_count()-1].actual_output)
         else:
             print "Error: There are no layers in this Neural Network"
             exit()
@@ -69,7 +69,7 @@ class NeuralNetwork:
                     for k in range(0, self.layers[i+1].get_neuron_count()):
                         self.layers[i].neurons[j].delta_error += (self.layers[i+1].neurons[k].connections[j].weight * self.layers[i+1].neurons[k].detla_error)
 
-                    self.layers[i].neurons[j].delta_error = (self.layers[i].neuron_output_value * (1-self.layers[i].neurons[j].neuron_output_value))
+                    self.layers[i].neurons[j].delta_error = (self.layers[i].neurons[j].neuron_output_value * (1-self.layers[i].neurons[j].neuron_output_value))
                 self.layers[i].train_layer(self.learning_rate)
                 self.layers[i].clear_expected_output()
 
