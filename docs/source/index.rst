@@ -13,6 +13,11 @@ Indices and tables
 Modules
 ==================
 
+.. automodule:: RaspGPIO
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 .. automodule:: RaspGPIO.Event.Event
     :members:
     :undoc-members:
